@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Bot, Send, User } from "lucide-react";
 import { motion } from "framer-motion";
+import API from "../config/api";
 
 const ChatBotPanel = ({ resumeData }: any) => {
 
@@ -59,7 +60,7 @@ Do you want me to improve your resume?`
 
     try {
 
-      const res = await fetch("http://localhost:5000/ai-resume-chat", {
+      const res = await fetch(`${API}/ai-resume-chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import API from "../config/api";
 
 const JobMatches = () => {
 
@@ -13,7 +14,7 @@ const JobMatches = () => {
       localStorage.getItem("resumeAnalytics") || "{}"
     );
 
-    fetch("http://localhost:5000/match-jobs", {
+    fetch(`${API}/match-jobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

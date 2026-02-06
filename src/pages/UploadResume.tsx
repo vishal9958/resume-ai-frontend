@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Upload, Clipboard, Cloud, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import API from "../config/api";
 
 // 🔥 REAL LOGIC IMPORTS
 import { extractSkills } from "../utils/skillExtractor";
@@ -33,7 +34,7 @@ const UploadResume = () => {
     formData.append("resume", file);
     formData.append("jobTitle", jobTitle);
 
-    const res = await fetch("http://localhost:5000/upload-resume", {
+    const res = await fetch(`${API}/upload-resume`, {
       method: "POST",
       body: formData
     });
