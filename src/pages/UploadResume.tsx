@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import API from "../config/api";
 
 // 🔥 REAL LOGIC IMPORTS
-import { extractSkills } from "../utils/skillExtractor";
-import { calculateResumeScore } from "../utils/resumeScore";
-import { calculateATSScore } from "../utils/atsScore";
+// import { extractSkills } from "../utils/skillExtractor";
+// import { calculateResumeScore } from "../utils/resumeScore";
+// import { calculateATSScore } from "../utils/atsScore";
 
 type Mode = "file" | "text" | "drive";
 

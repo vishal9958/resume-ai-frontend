@@ -10,7 +10,8 @@ const ChatBotPanel = ({ resumeData }: any) => {
   const [resume, setResume] = useState(resumeData);
   const [loading, setLoading] = useState(false);
 
-  const scrollRef = useRef<any>();
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
 
 
   /* ================= AUTO INTRO MESSAGE ================= */

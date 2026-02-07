@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, TrendingUp, Sparkles } from "lucide-react";
 
-const ResumeInsights = ({ data }) => {
+const ResumeInsights = ({ data }: any) => {
+
 
   // ⭐ SAFE DATA READ
   const weaknesses = data?.weaknesses || [];
@@ -27,7 +28,7 @@ const ResumeInsights = ({ data }) => {
 
         <ul className="space-y-2 text-sm">
           {weaknesses.length ? (
-            weaknesses.map((w, i) => (
+            weaknesses.map((w:string, i:number) => (
               <li key={i} className="flex gap-2 text-red-600">
                 ❌ {w}
               </li>
@@ -57,7 +58,7 @@ const ResumeInsights = ({ data }) => {
 
         <ul className="space-y-2 text-sm">
           {skillGap.length ? (
-            skillGap.map((s, i) => (
+            skillGap.map((s:string, i:number) => (
               <li key={i} className="flex gap-2 text-amber-600">
                 ⚠ {s}
               </li>
@@ -87,7 +88,7 @@ const ResumeInsights = ({ data }) => {
 
         <ul className="space-y-2 text-sm">
           {suggestions.length ? (
-            suggestions.map((s, i) => (
+            suggestions.map((s:string, i:number) => (
               <li key={i} className="flex gap-2 text-green-600">
                 ✅ {s}
               </li>

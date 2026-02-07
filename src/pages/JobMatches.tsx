@@ -4,15 +4,26 @@ import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import API from "../config/api";
 
+type Job = {
+  title: string;
+  company: string;
+  location: string;
+  match: number;
+  url: string;
+};
+
+
 const JobMatches = () => {
 
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
+
 
   useEffect(() => {
 
     const resumeData = JSON.parse(
       localStorage.getItem("resumeAnalytics") || "{}"
     );
+    
 
     fetch(`${API}/match-jobs`, {
       method: "POST",
@@ -50,6 +61,7 @@ const JobMatches = () => {
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
         {jobs.map((job, index) => (
+          
 
           <motion.div
             key={index}
